@@ -1,0 +1,136 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Jeager-ML</title>
+		<link rel="icon" href="images/icon.jpg">
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Header -->
+			<header id="header">
+				<a href="index.html" class="title">Jeager-ML</a>
+				<nav>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+					</ul>
+				</nav>
+			</header>
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<section id="main" class="wrapper">
+						<div class="inner">
+							<h2 class="major">Jeager-ML</h2>
+							<span class="image fit"><img src="images/jeager.png" alt="" /></span>
+							<h2>Intent</h2>
+
+							<p>
+							Ever wanted to control giant mechs with gloves? Good luck with that. The best we can do is tell you how to play street fighter games. This project does one thing first and foremost:
+
+							The JaegerML project uses machine learning on embedded low-energy devices for the analysis and classification of gestures given real-time accelerometer and gyroscope data.
+
+							The gestures that we are looking to classify for this proof of concept will be a set of punches. These punches, once classified, will map directly to key presses in an arcade fighting game inspired by StreetFighter.
+						</p>
+
+						<h2>Features</h2>
+
+						<p>(6) recognized punching gestures:</p>
+
+						<ul>
+							<li>Left Hand Jab</li>
+  						<li>Left Hand Punch</li>
+  						<li>Left Hand Haymaker</li>
+  						<li>Right Hand Jab</li>
+  						<li>Right Hand Punch</li>
+  						<li>Right Hand Haymaker</li>
+						</ul>
+
+							<h2>Development Method</h2>
+
+							<h2>Capturing Data</h2>
+
+							<p>Punches dataset will be gathered for the training of the model.
+								<br>JaegerML Data Capture is used to get accellerometer and gyroscope sample data for machine learning model training purposes.
+								<br>Everyone recorded 50 observations of 119 samples and 6 features, to be classified against 8 possible fighting movements. All of the data will be uploaded to the github and will be of a uniform format.
+								<br>The data was captured via serial input through a USB, which was then saved as a CSV.
+							</p>
+
+
+
+							<h2>Training the model</h2>
+
+							<p>Training the model is done using Python with Jupyter Notebook using logistic regression. We saw precision measurments of 75% with this method.
+								We think that it was this low because many of the moves look the same.
+							</p>
+
+							<h2>Testing/Verifying</h2>
+
+							<p>The two Arduinos and their batteries will be strapped to the back of the hands by Ace Bandages wrapped around the palm.
+								Arduinos will advertise hexadecimal values over BLE corresponding to recognized punch classes.
+
+								These advertised BLE characteristics will be read by a nifty little fighting game created custom for this project specifically (thanks Wyatt!).
+							</p>
+							</br>
+
+
+							<h2>Okay, but why TinyML?</h2>
+							<ul>
+								<li>We don’t want a machine learning model running on the PC sucking up that precious computing power!</li>
+								<li>Devices can be low energy and fitted into gloves/wearable devices.</li>
+								<li>When used with Bluetooth Low Enegy it allows controllers to not have to keep serial connections open to transfer data, rather a single hex value can be advertised from the Arduino controllers, designating the punch class to a listening client.</li>
+								<li>Given the use of BLE, this application could be extended to control mobile games, etc.</li>
+								<li>Essentially allows an open source look into developing a “lightweight game controller” that is pretty cheap and easy to develop.</li>
+							</ul>
+
+							<h2>Wishlist</h2>
+							<ul>
+								<li>3rd Arduino Nano 33 BLE Sense on the chest to control forward/backward lateral movement and jumping</li>
+								<li>Blocking hotkey binding via blocking hand gesture</li>
+								<li>Special attacks (denoted by a special hand gesture before attack)</li>
+
+							</ul>
+
+							<h2>Meet the Devs!</h2>
+							<ul>
+								<li><a href="https://www.linkedin.com/in/anthony-mesa-994889144/">Anthony</a></li>
+								<li><a href="https://www.linkedin.com/in/aka-sh-c-033b1b16a/">Akasha</a></li>
+								<li><a href="https://www.linkedin.com/in/wyatt-hackley-3a038a163/">Wyatt</a></li>
+								<li>Steven</li>
+								<li><a href="https://github.com/MichaMung">Michael</a></li>
+
+						</div>
+					</section>
+
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer" class="wrapper alt">
+				<div class="inner">
+					<ul class="menu">
+						<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
